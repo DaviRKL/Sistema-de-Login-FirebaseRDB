@@ -1,21 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+<?php
+include_once ("header.php")
+    ?>
+<div class="form-login card">
     <form method="post" action="signup_action.php">
         <h2>Cadastre-se</h2>
-        Nome completo <br>
-        <input type="text" name="name"><br>
-        Email <br>
-        <input type="text" name="email"><br>
-        Senha <br>
-        <input type="text" name="password"><br>
-        <input type="submit" value="SIGNUP"><br><br>
-        Ainda não possui uma conta? <a href="login.php">Login</a>
+
+        <label class="form-label">Nome completo</label>
+        <input type="text" name="name" class="form-control"><br>
+
+        <label class="form-label">Email</label>
+        <input type="text" name="email" class="form-control"><br>
+
+        <label class="form-label">Senha</label>
+        <input type="password" name="password" class="form-control"><br>
+
+        <input type="submit" class="btn" value="SIGNUP"><br><br>
     </form>
-</body>
-</html>
+</div>
+Já possui uma conta? <a href="login.php">Login</a>
+
+<?php
+include_once ("footer.php")
+    ?>

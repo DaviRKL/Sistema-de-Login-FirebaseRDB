@@ -4,7 +4,14 @@ include("firebaseRDB.php");
 
 if(!isset($_SESSION['user'])){
     header("location:  login.php");
-}else{
-    echo "Seja bem vindo ao meu site <b>{$_SESSION['user']['name']}</b>";
-    echo "<a href='logout.php'>Logout</a>";
 }
+$userName = htmlspecialchars($_SESSION['user']['name']);
+include_once ("header.php")
+?>
+    <div class='alert alert-success'>
+        <i class='fas fa-check-circle'></i> Seja bem vindo ao meu site <b><?php echo $userName ?></b>
+    </div>
+    <a href='logout.php' class='btn'><i class="fa-solid fa-right-from-bracket"></i>Logout</a>
+<?php
+    include_once ("footer.php")
+?>

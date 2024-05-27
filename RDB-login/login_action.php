@@ -12,7 +12,6 @@ if($email == ""){
 }else{
     $rdb = new firebaseRDB($databaseURL);
     $retrieve = $rdb->retrieve("/user", 'email', 'EQUAL', $email);
-    echo $retrieve;
     $data = json_decode($retrieve, 1);
 
     if(count($data)==0){
@@ -24,7 +23,13 @@ if($email == ""){
             $_SESSION['name'] = $data[$id]['name'];
             header("location: dashboard.php");
         }else{
-            echo 'Falha ao logar';
+            include_once ("header.php")
+                ?>
+                    <div class='alert alert-danger'>
+                        <i class="fa-solid fa-xmark"></i> Falha ao logar, tente realizar o <a href='login.php'>Login</a> novamente</b>
+                    </div>
+            <?php
+            include_once ("footer.php");
         }
     }
 }
